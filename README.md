@@ -2,16 +2,6 @@
 
 This is a work in progress - There is sparse documentation, no tests, and it's not on npm. Use at your own risk while we finish up!
 
-## Install
-
-```
-npm install shasta-forms
-```
-
-## Example
-
-# shasta-forms
-
 shasta-forms provides a wrapper around [redux-form](https://github.com/erikras/redux-form) which provides a few nice features:
 - Write jsx form fields with attributes, no outside metadata
 - Validation via [redux-form-schema](https://github.com/Lighthouse-io/redux-form-schema)
@@ -20,7 +10,14 @@ shasta-forms provides a wrapper around [redux-form](https://github.com/erikras/r
 
 see [redux-form-schema](https://github.com/Lighthouse-io/redux-form-schema) and [validator.js](https://github.com/chriso/validator.js) for validation documentation- simply pass into `Field` jsx
 
-#### Usage
+
+## Install
+
+```
+npm install shasta-forms
+```
+
+## Example
 ```js
 import React from 'react'
 import { Component } from 'shasta'
