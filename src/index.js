@@ -170,9 +170,10 @@ export const connect = (name, schema, form, opt = {}) => {
 
 // reducer
 // redux-form reducer wrapped to support immutable.js
-
-export const reducer = (state, action) =>
-  fromJS(formReducer(state ? state.toJS() : {}, action))
+export const reducers = {
+  forms: (state = Map(), action = {}) =>
+    fromJS(formReducer(state.toJS(), action))
+}
 
 // export redux-form's getValues
 
