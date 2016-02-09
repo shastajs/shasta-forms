@@ -1,9 +1,5 @@
 'use strict';
 
-var _map = require('babel-runtime/core-js/map');
-
-var _map2 = _interopRequireDefault(_map);
-
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -283,7 +279,7 @@ var connect = exports.connect = function connect(name, schema, form) {
 // redux-form reducer wrapped to support immutable.js
 var reducers = exports.reducers = {
   forms: function forms() {
-    var state = arguments.length <= 0 || arguments[0] === undefined ? (0, _map2.default)() : arguments[0];
+    var state = arguments.length <= 0 || arguments[0] === undefined ? (0, _immutable.Map)() : arguments[0];
     var action = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
     return (0, _immutable.fromJS)((0, _reduxForm.reducer)(state.toJS(), action));
   }

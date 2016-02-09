@@ -10,7 +10,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import startCase from 'lodash.startcase'
-import { fromJS } from 'immutable'
+import { Map, fromJS } from 'immutable'
 import { reducer as formReducer, reduxForm } from 'redux-form'
 import { Component, PropTypes } from 'shasta'
 import buildSchema from 'redux-form-schema'
