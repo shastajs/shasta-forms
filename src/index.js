@@ -112,7 +112,8 @@ export class Field extends Component {
     name: PropTypes.string.isRequired,
     inputType: PropTypes.string,
     noLabel: PropTypes.bool,
-    label: PropTypes.string
+    label: PropTypes.string,
+    showErrorPopup: PropTypes.bool
   };
   static contextTypes = {
     fields: PropTypes.object,
@@ -136,7 +137,7 @@ export class Field extends Component {
           {...field}
           {...this.props} />
         {
-          isError
+          (isError && this.props.showErrorPopup)
             ? <div
                 className="ui basic red pointing prompt label animating transition scale in">
                 {field.error}
