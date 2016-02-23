@@ -49,7 +49,7 @@ export class Form extends Component {
     children: PropTypes.node,
     errors: PropTypes.object,
     className: PropTypes.string,
-    initialValues: PropTypes.initialValues
+    initialValues: PropTypes.object
   };
   getSchema(form) {
     let schema = form.reduce(reduceSchema, {})
@@ -121,6 +121,7 @@ export class Field extends Component {
   static defaultProps = {
     inputType: 'text'
   };
+  static displayName = 'Field';
   render() {
     let label = this.props.label || startCase(this.props.name)
     let field = this.context.fields[this.props.name]
