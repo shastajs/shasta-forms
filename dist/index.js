@@ -221,7 +221,7 @@ var Field = exports.Field = function (_Component3) {
           _react2.default.createElement('input', (0, _extends3.default)({
             type: this.props.inputType
           }, field, this.props)),
-          isError ? _react2.default.createElement(
+          isError && this.props.showErrorPopup ? _react2.default.createElement(
             'div',
             {
               className: 'ui basic red pointing prompt label animating transition scale in' },
@@ -246,7 +246,8 @@ Field.propTypes = {
   name: _shasta.PropTypes.string.isRequired,
   inputType: _shasta.PropTypes.string,
   noLabel: _shasta.PropTypes.bool,
-  label: _shasta.PropTypes.string
+  label: _shasta.PropTypes.string,
+  showErrorPopup: _shasta.PropTypes.bool
 };
 Field.contextTypes = {
   fields: _shasta.PropTypes.object,
