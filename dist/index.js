@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getValues = exports.reducers = exports.connect = exports.Field = exports.Form = undefined;
+
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -27,11 +32,6 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getValues = exports.reducers = exports.connect = exports.Field = exports.Form = undefined;
 
 var _react = require('react');
 
@@ -146,6 +146,7 @@ var Form = exports.Form = function (_Component) {
 
       // connect redux-form
 
+
       myForm.propTypes = {
         actions: _shasta.PropTypes.object
       };
@@ -187,7 +188,7 @@ Form.propTypes = {
   children: _shasta.PropTypes.node,
   errors: _shasta.PropTypes.object,
   className: _shasta.PropTypes.string,
-  initialValues: _shasta.PropTypes.initialValues
+  initialValues: _shasta.PropTypes.object
 };
 
 var Field = exports.Field = function (_Component3) {
@@ -254,6 +255,7 @@ Field.contextTypes = {
 Field.defaultProps = {
   inputType: 'text'
 };
+Field.displayName = 'Field';
 var connect = exports.connect = function connect(name, schema, form) {
   var opt = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
 
