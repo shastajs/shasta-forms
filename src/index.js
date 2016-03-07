@@ -49,7 +49,7 @@ export class Form extends Component {
     children: PropTypes.node,
     errors: PropTypes.object,
     className: PropTypes.string,
-    initialValues: PropTypes.initialValues
+    initialValues: PropTypes.object
   };
   getSchema(form) {
     let schema = form.reduce(reduceSchema, {})
@@ -112,7 +112,8 @@ export class Field extends Component {
     name: PropTypes.string.isRequired,
     inputType: PropTypes.string,
     noLabel: PropTypes.bool,
-    label: PropTypes.string
+    label: PropTypes.string,
+    showErrorPopup: PropTypes.bool
   };
   static contextTypes = {
     fields: PropTypes.object,
@@ -121,6 +122,7 @@ export class Field extends Component {
   static defaultProps = {
     inputType: 'text'
   };
+  static displayName = 'Field';
   render() {
     let label = this.props.label || startCase(this.props.name)
     let field = this.context.fields[this.props.name]
@@ -135,7 +137,7 @@ export class Field extends Component {
           {...field}
           {...this.props} />
         {
-          isError
+          (isError && this.props.showErrorPopup)
             ? <div
                 className="ui basic red pointing prompt label animating transition scale in">
                 {field.error}
