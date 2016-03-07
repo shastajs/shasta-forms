@@ -43,7 +43,7 @@
     "docs:publish": "cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push git@github.com:shastajs/shasta-forms gh-pages --force"
   },
   "peerDependencies": {
-    "shasta": "github:shastajs/shasta"
+    "shasta": "shastajs/shasta"
   },
   "devDependencies": {
     "babel": "^6.3.26",
@@ -70,7 +70,7 @@
     "mochify": "dylanfm/mochify.js",
     "react": "^0.14.7",
     "rimraf": "^2.5.0",
-    "shasta": "github:shastajs/shasta",
+    "shasta": "shastajs/shasta",
     "should": "^8.0.0"
   },
   "babel": {
